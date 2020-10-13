@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	
+	<title>Home Page</title>
+	<style type="text/css">
+		ul li{
+			list-style: none;
+		}
+	</style>
+
+	<script type="text/javascript">
+    
+    function display(id){  
+        var traget=document.getElementById(id);  
+        if(traget.style.display=="none"){  
+            traget.style.display="";  
+        }else{  
+            traget.style.display="none";  
+      }  
+    }
+
+ 	</script>
+
+
+</head>
+<body>
+	
+	<!-- navigation bar -->
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="margin-bottom: 0px; background-color: #e9ecef;">
+	
+		<h5 class="my-0 mr-md-auto font-weight-normal" >E-Learning</h5>
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-2 text-dark" href="{% url 'home_page' %}"> Home </a>
+			<a class="p-2 text-dark" href="{% url 'show_courses' %}">Lessons</a>
+			{% if userid %}
+			<a class="p-2 text-dark" href="{% url 'user_center' %}">User:{{userid}}</a>
+			{% endif %}
+		</nav>
+		{% if userid %}
+		<a class="btn btn-outline-primary" href="{% url 'log_out' %}">Logout</a>
+		{% endif %}
+	</div>
+
+	<!-- body -->
+	<div class="container">
+		<div id="list-example" class="list-group">
+			<a class="list-group-item list-group-item-action" onclick="display('1')" href="#">Category 0</a>
+			<div id="1" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_0 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+			<a class="list-group-item list-group-item-action" onclick="display('2')" href="#">Category 1</a>
+			<div id="2" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_1 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+			<a class="list-group-item list-group-item-action" onclick="display('3')" href="#">Category 2</a>
+			<div id="3" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_2 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+			<a class="list-group-item list-group-item-action" onclick="display('4')" href="#">Category 3</a>
+			<div id="4" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_3 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+        	<a class="list-group-item list-group-item-action" onclick="display('5')" href="#">Category 4</a>
+			<div id="5" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_4 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+        	<a class="list-group-item list-group-item-action" onclick="display('6')" href="#">Category 5</a>
+			<div id="6" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_5 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+        	<a class="list-group-item list-group-item-action" onclick="display('7')" href="#">Category 6</a>
+			<div id="7" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_6 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+        	<a class="list-group-item list-group-item-action" onclick="display('8')" href="#">Category 7</a>
+			<div id="8" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_7 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+        	<a class="list-group-item list-group-item-action" onclick="display('9')" href="#">Category 8</a>
+			<div id="9" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_8 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+
+        	<a class="list-group-item list-group-item-action" onclick="display('10')" href="#">Category 9</a>
+			<div id="10" style="display: none;" class="list-group-item">
+				<div class="row">
+					{% for course in course_9 %}
+					<div class="col-md-2">
+						<div class="card">
+							<div class="card-body">
+					    		<h7 class="card-title">{{course.cour_id}}</h5>
+							</div>
+						</div>
+				 	</div>
+					{% endfor %}
+				</div>
+        	</div>
+		</div>
+	</div>
+
+
+
+<!-- footer -->
+		<footer class="pt-4 my-md-5 pt-md-5" style="border-top: 1px solid lightgrey;">
+			<div class="container-fluid">
+				<div class="row">
+		    		<div class="col-12 col-md"><h3>E-Learning</h3></div>
+		    		<div class="col-6 col-md">
+		    			<h5>Contact us</h5>
+		    			<ul>
+		    				<li>jinyan.dong@student.uts.edu.au</li>
+		    				<li>shaojie.miao-1@student.uts.edu.au</li>
+		    				<li>lianglinag.gu@student.uts.edu.au</li>
+		    			</ul>
+		    		</div>
+		    		<div class="col-6 col-md">
+		    			<h5>Conducted by</h5>
+		    			<ul>
+		    				<li>Dr.Guangquan Zhang</li>
+		    				<li>Dr.Qian liu</li>
+		    		
+		    			</ul>
+		    		</div>
+				</div>
+			</div>
+		
+		</footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>

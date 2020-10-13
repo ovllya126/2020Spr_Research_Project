@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	
+	<title></title>
+
+</head>
+
+<body>
+
+
+	<!-- navigation bar -->
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="margin-bottom: 0px; background-color: #e9ecef;">
+	
+		<h5 class="my-0 mr-md-auto font-weight-normal" >E-Learning</h5>
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-2 text-dark" href="{% url 'home_page' %}"> Home </a>
+			<a class="p-2 text-dark" href="{% url 'show_courses' %}">Lessons</a>
+			<a class="p-2 text-dark" href="{% url 'user_center' %}">User:{{userid}}</a>
+
+		</nav>
+		<a class="btn btn-outline-primary" href="{% url 'log_out' %}">Logout</a>
+	</div>
+
+	<!-- body -->
+	{% load static %}
+	<div class='row'>
+		
+		<div class='col-1'>
+		</div>
+		
+		<div class="col-7">
+			<div class='row' style="margin-top: 20px; margin-bottom: 20px;">
+				<div class="col-8">
+					<h2> Viewed Courses </h2>
+				</div>
+			</div>
+			<div class="row">
+				{% for courseid in courseids %}
+				<div class="col-md-3">
+					<div class="card">
+						<img src="{% static 'courses.png' %}" class="card-img-top"  >
+						<div class="card-body">
+					    	<h5 class="card-title">{{courseid.course_id}}</h5>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			
+			</div>
+		
+
+			<div class='row' style="margin-top: 40px; margin-bottom: 20px;">
+				<div class="col-8">
+					<h2> Recommended Courses </h2>
+				</div>
+			</div>
+		
+			
+			<div class="row">
+				{% for recom in recommends_arr %}
+				<div class="col-md-3" >
+					<div class="card">
+						<img src="{% static 'recommend.png' %}" class="card-img-top">
+						<div class="card-body">
+					    	<h5 class="card-title">{{recom}}</h5>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			
+			</div>
+		</div>
+
+
+		<div class='col-3'>
+			<div class="card" style="width: 15rem; margin-left: 90px;margin-right: 0px;">
+				<img src="{% static 'person.png' %}" class="card-img-top" alt="...">
+
+				<div class="card-body">
+				    <h5 class="card-title">{{username}}</h5>
+				    <p class="card-text">{{userid}}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+				    <li class="list-group-item">{{gender}}</li>
+				    <li class="list-group-item">{{state}}</li>
+				    <li class="list-group-item">{{email}}</li>
+				</ul>
+
+ 				</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+
+			<footer class="pt-4 my-md-5 pt-md-5" style="border-top: 1px solid lightgrey;">
+			<div class="container-fluid">
+				<div class="row">
+		    		<div class="col-12 col-md"><h3>E-Learning</h3></div>
+		    		<div class="col-6 col-md">
+		    			<h5>Contact us</h5>
+		    			<ul>
+		    				<li>jinyan.dong@student.uts.edu.au</li>
+		    				<li>shaojie.miao-1@student.uts.edu.au</li>
+		    				<li>lianglinag.gu@student.uts.edu.au</li>
+		    			</ul>
+		    		</div>
+		    		<div class="col-6 col-md">
+		    			<h5>Conducted by</h5>
+		    			<ul>
+		    				<li>Dr.Guangquan Zhang</li>
+		    				<li>Dr.Qian liu</li>
+		    		
+		    			</ul>
+		    		</div>
+				</div>
+			</div>
+		
+		</footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
