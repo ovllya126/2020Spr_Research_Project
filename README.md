@@ -4,7 +4,7 @@ This is for 32933 research project in UTS.
 Group members are Jinyan Dong, Shaojie Miao, Liangliang gu.
 Supervised by Professor Guangquan Zhang and PhD Qian Zhang.
 
-##Reference
+### Reference
 
 The SR-GNN models are referenced by  https://github.com/CRIPAC-DIG/SR-GNN
 
@@ -26,7 +26,7 @@ editor = {Pascal Van Hentenryck and Zhi-Hua Zhou},
 }
 ```
 
-##Get Start
+### Get Start
 
 In shell
 ```
